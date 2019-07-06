@@ -1,0 +1,117 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+
+<div class="container-fluid">
+  <div class="card mb-3">
+	<div class="row">
+		<div class="col-md-12 ">
+			<h2 class="pt-5 pl-5 pr-5">
+				Create A Task
+      </h2>
+      
+      <div class="row p-5 ">
+        <div class="col-md-12 p-3">
+
+<!-- Add Task Form-->
+
+   
+      <form >
+       <div class="form-group ">
+        <label class="control-label " for="name">
+         Task Name
+        </label>
+        <input class="form-control" id="name" name="name" type="text"/>
+       </div>
+       <div class="form-group ">
+        <label class="control-label " for="textarea">
+         Task Description
+        </label>
+        <textarea class="form-control" cols="40" id="textarea" name="textarea" rows="10"></textarea>
+       </div>
+       <div class="form-group ">
+        <label class="control-label " for="select">
+         Priority
+        </label>
+        <select class="select form-control" id="select" name="select">
+         <option value="1 - Very Low Priority">
+          1 - Very Low Priority
+         </option>
+         <option value="2 - Low Priority">
+          2 - Low Priority
+         </option>
+         <option value="3 - Medium Priority">
+          3 - Medium Priority
+         </option>
+         <option value="4 - High Priority">
+          4 - High Priority
+         </option>
+         <option value="5 - Very High Priority">
+          5 - Very High Priority
+         </option>
+        </select>
+       </div>
+
+       <div class="form-group ">
+          <label class="control-label " for="select">
+           Allocate Task to user:
+          </label>
+          <select class="select form-control" id="select" name="select">
+           <option value="user1">
+            user1
+           </option>
+           <option value="user2">
+              user2
+           </option>
+           <option value="user3">
+              user3
+           </option>
+           <option value="user4">
+              user4
+           </option>
+           <option value="user5">
+            user5
+           </option>
+          </select>
+         </div>
+       <div class="form-group ">
+        <label class="control-label " for="number">
+         Time Allocation for Task (in Minutes)
+        </label>
+        <input class="form-control" id="number" name="number" type="text"/>
+       </div>
+       <div class="form-group ">
+        <label class="control-label " for="url">
+         Deliverables (if needed)
+        </label>
+        <input class="form-control" id="url" name="url" type="text"/>
+       </div>
+       <div class="form-group">
+        <div>
+         <button class="btn btn-dark btn-block " name="addTask" type="submit">
+          Add Task
+         </button>
+        </div>
+       </div>
+      </form>
+  
+
+
+  <!-- End Add Task Form-->
+
+          
+        
+        </div>
+
+          </div>
+  
+      
+
+		
+		</div>
+  </div>
+  
+</div>
+
+
+
+</div>

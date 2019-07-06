@@ -1,0 +1,110 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+
+<div class="container-fluid">
+
+  <div *ngFor="let task of items; index as i;" class="card mb-3">
+
+    <div  *ngIf="!task.isCompleted">
+
+    <div class="row">
+      <div class="col-7">
+        <div class="page-header card-header">
+          <h1>
+            
+            {{task.title}}
+          </h1>
+        </div>
+        <div class="row">
+          <div class="col-md-12 card-body p-5">
+            <h2>
+              Task Description
+             
+            </h2>
+            <p>
+                {{task.description}}
+            </p>
+            <p>
+             
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-5 p-5">
+        <h2 class="text-center pb-4">
+          Task Priority - {{task.priority}}
+        </h2>
+        <div class="card" style="padding:10px;">
+
+          <div class="card-header">
+            <h4 class="text-center"> Time Allocated: 
+            {{task.allocatedTime}} Minutes  </h4>
+
+            <div class="pt-5">
+          <h5 class="float-left">
+            Task Timer
+          </h5>
+
+          <h5 class="float-right">
+
+            <div *ngIf="currentIndex === i; else inactiveTimer">
+              {{timeElapsedMinutes  | number : '2.0'}}  :  {{timeElapsedSeconds  | number : '2.0'}}
+            </div> 
+
+            <ng-template #inactiveTimer> 00 : 00</ng-template>
+
+            </h5>
+
+          </div>
+
+        </div>
+
+          <div class="card-body">
+
+            <div class="row p-3">
+                <button type="button" class="btn btn-dark btn-block btn-lg" (click)="startTimer(task,i)">
+                    Start Timer
+                  </button>
+
+            </div>
+
+            <div class="row p-3">
+                <button type="button" class="btn btn-danger btn-block btn-lg " (click)="stopTimer(task)">
+                    Stop Timer
+                  </button>
+
+            </div>
+
+          </div>
+
+          <div class="card-footer">
+           <h4 class="text-center"> Total Time Taken: {{task.timeTaken | number : '1.2-2'}} Minutes </h4>
+          </div>
+    
+
+        </div> 
+        <div class= "p-3" *ngIf="!task.inReview">
+        <button type="button" class="btn btn-outline-success btn-block btn-lg" (click)= "submitForReview(task);">
+          Submit for Review
+        </button>
+      </div>
+
+
+
+      <div class= "p-3" *ngIf="task.inReview" >
+          <button type="button" class="btn btn-outline-warning btn-block btn-lg" (click)=cancelReview(task)>
+            Cancel Review Submission
+          </button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+
+      

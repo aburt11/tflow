@@ -1,0 +1,83 @@
+<div [class]="'app-sidebar sidebar-shadow ' + (config$ | async).sidebarTheme">
+  <div class="app-header__logo">
+    <div class="logo-src"></div>
+    <div class="header__pane ml-auto">
+    <!-- <button type="button" class="hamburger close-sidebar-btn"
+              [ngClass]="{'is-active' : globals.toggleSidebar}" (click)="toggleSidebar()">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+      </button>--> 
+    </div>
+  </div>
+  <div class="app-sidebar-content">
+    <div class="app-sidebar-scroll">
+      <perfect-scrollbar [autoPropagation]="true">
+        <div class="v-sidebar-menu vsm-default">
+          <div class="vsm-list">
+            <ngb-accordion [destroyOnHide]="false" [closeOthers]="true" [activeIds]="extraParameter">
+              <ngb-panel>
+                <ng-template ngbPanelHeader>
+                  <div class="vsm-header">Projects</div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="dashboardsMenu">
+                <ng-template ngbPanelHeader>
+                  <button ngbPanelToggle class="vsm-link">
+                    <i class="vsm-icon pe-7s-rocket"></i>
+                    <span class="vsm-title"> My Project 1</span>
+                    <i class="vsm-arrow"></i>
+                  </button>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                  <div class="vsm-dropdown">
+                    <div class="vsm-list">
+
+
+                        <div class="vsm-item"><a routerLink="" routerLinkActive="active-item"
+                          [routerLinkActiveOptions]="{exact: true}" class="vsm-link"><span
+                           class="vsm-title">Home</span></a>
+                            </div>
+
+                            <div class="vsm-item"><a routerLink="/Pages/milestones" routerLinkActive="active-item"
+                              [routerLinkActiveOptions]="{exact: true}" class="vsm-link"><span
+                               class="vsm-title">Milestones</span></a>
+                                </div>
+
+                      <div class="vsm-item"><a routerLink="/Pages/tasks" routerLinkActive="active-item"
+                                               [routerLinkActiveOptions]="{exact: true}" class="vsm-link"><span
+                        class="vsm-title">Tasks</span></a>
+                      </div>
+
+
+
+
+                      <div class="vsm-item"><a routerLink="/Pages/add-task" routerLinkActive="active-item"
+                        [routerLinkActiveOptions]="{exact: true}" class="vsm-link"><span class="vsm-title">Add A Task</span></a>
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
+
+
+                  
+                </ng-template>
+
+
+                
+              </ngb-panel>
+              <ngb-panel id="pagesMenu">
+               
+              </ngb-panel>
+            </ngb-accordion>
+        
+            
+          </div>
+        </div>
+      </perfect-scrollbar>
+    </div>
+  </div>
+</div>
